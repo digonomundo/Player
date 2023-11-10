@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setTitle("                       MUSIC PLAYER".toUpperCase(Locale.ROOT));
+        getSupportActionBar().hide();
 
 
         btnPlayProg = findViewById(R.id.btnPlay);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     mp = MediaPlayer.create(MainActivity.this,R.raw.semana);
                     mp.start();
                     status1 = 1;
-                    btnPlayProg.setBackgroundResource(R.drawable.icone_pause);
+                    btnPlayProg.setBackgroundResource(R.drawable.pause_buttom);
                     txtTituloProg.setText("Mais uma semana.mp3");
                     imgRodando.setImageResource(R.drawable.discopronto);
                     imgRodando.startAnimation(rotacao);
@@ -64,14 +64,14 @@ public class MainActivity extends AppCompatActivity {
                 } else if(status1 == 1){
                     mp.pause();
                     status1 = 2;
-                    btnPlayProg.setBackgroundResource(R.drawable.icone_play);
+                    btnPlayProg.setBackgroundResource(R.drawable.play_buttom);
                     rotacao.cancel();
                     txtDeslizando.cancel();
 
                 }else if(status1 == 2){
                     mp.start();
                     status1 = 1;
-                    btnPlayProg.setBackgroundResource(R.drawable.icone_pause);
+                    btnPlayProg.setBackgroundResource(R.drawable.pause_buttom);
                     imgRodando.startAnimation(rotacao);
                     txtTituloProg.startAnimation(txtDeslizando);
                 }
@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mp.stop();
                 status1 = 0;
-                btnPlayProg.setBackgroundResource(R.drawable.icone_play);
-                txtTituloProg.setText("Título");
+                btnPlayProg.setBackgroundResource(R.drawable.play_buttom);
+                txtTituloProg.setText("");
                 imgRodando.setImageResource(R.drawable.disco);
                 rotacao.cancel();
                 txtDeslizando.cancel();

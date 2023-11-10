@@ -5,16 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/fundomadeira"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnStop"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/icone_stop"
-        android:layout_marginStart="50dp"/>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <TextView
+            android:textSize="50sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Music Player"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -25,27 +31,41 @@
     <ImageView
         android:id="@+id/imgDisco"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:src="@drawable/disco"/>
 
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:background="@color/cinza">
+        android:layout_marginTop="600dp"
+        android:gravity="center_horizontal">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/play_buttom"/>
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/stop_buttom"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/txtTitulo"
@@ -55,26 +75,8 @@
             android:singleLine="true"
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
-            android:text="Título"
+            android:text=""
             android:textSize="30dp"/>
-
-        </LinearLayout>
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/btnPlay"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:backgroundTint="@color/white"
-                    android:background="@drawable/icone_play"
-                    android:layout_alignParentEnd="true"/>
-        </RelativeLayout>
-
-
     </LinearLayout>
 
 </RelativeLayout>
